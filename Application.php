@@ -6,6 +6,13 @@ use alfianchii\phpmvc\db\Database;
 
 class Application
 {
+    // Consts event
+    const EVENT_BEFORE_REQUEST = "beforeRequest";
+    const EVENT_AFTER_REQUEST = "afterRequest";
+
+    // Events
+    protected array $eventListeners = [];
+
     // Properties
     public static string $ROOT_DIR;
     public static Application $app;
@@ -55,6 +62,9 @@ class Application
     // Running the application
     public function run()
     {
+        // Trigger an event
+        $this->triggerEvent(self::EVENT_BEFORE_REQUEST);
+
         // If in "try" occurs an error, just throw the error to "catch"
         try {
             echo $this->router->resolve();
@@ -106,5 +116,24 @@ class Application
     {
         // Whether user was null
         return !self::$app->user;
+    }
+
+    // Register an event
+    public function on($eventName, $callback)
+    {
+        // Add the event
+        $this->eventListeners[$eventName][] = $callback;
+    }
+
+    // Trigger an event
+    public function triggerEvent($eventName)
+    {
+        // Take the callback from $eventListeners for the given $eventName
+        $callbacks = $this->eventListeners[$eventName] ?? [];
+
+        // Iterates it, then execute
+        foreach ($callbacks as $callback) {
+            call_user_func($callback);
+        }
     }
 }
