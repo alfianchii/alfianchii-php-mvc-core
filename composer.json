@@ -1,0 +1,11 @@
+{
+	"name": "alfianchii/php-mvc-core",
+	"description": "The core folder of php-mvc-framework.",
+	"authors": [
+		{
+			"name": "alfianchii",
+			"email": "pianaee379@gmail.com"
+		}
+	],
+	"require": {}
+}
