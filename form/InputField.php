@@ -1,8 +1,8 @@
 <?php
 
-namespace app\core\form;
+namespace alfianchii\phpmvc\form;
 
-use app\core\Model;
+use alfianchii\phpmvc\Model;
 
 class InputField extends BaseField
 {

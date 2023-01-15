@@ -1,8 +1,8 @@
 <?php
 
-namespace app\core;
+namespace alfianchii\phpmvc;
 
-use app\core\exceptions\NotFoundException;
+use alfianchii\phpmvc\exceptions\NotFoundException;
 
 class Router
 {
@@ -54,7 +54,7 @@ class Router
         // If $callback was an array, instance it [controller, method], then set the action
         if (is_array($callback)) {
             // Hey, the $controller variable is an instance of Controller class.
-            /** @var \app\core\Controller $controller */
+            /** @var \alfianchii\phpmvc\Controller $controller */
 
             // Instance
             $controller = new $callback[0]();

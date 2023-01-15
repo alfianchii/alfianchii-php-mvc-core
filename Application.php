@@ -1,8 +1,8 @@
 <?php
 // The namespace
-namespace app\core;
+namespace alfianchii\phpmvc;
 
-use app\core\db\Database;
+use alfianchii\phpmvc\db\Database;
 
 class Application
 {
@@ -68,12 +68,12 @@ class Application
     }
 
     // Getter and setter of Controller
-    public function getController(): \app\core\Controller
+    public function getController(): \alfianchii\phpmvc\Controller
     {
         return $this->controller;
     }
 
-    public function setController(\app\core\Controller $controller): void
+    public function setController(\alfianchii\phpmvc\Controller $controller): void
     {
         $this->controller = $controller;
     }

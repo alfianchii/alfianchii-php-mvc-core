@@ -1,8 +1,8 @@
 <?php
 
-namespace app\core;
+namespace alfianchii\phpmvc;
 
-use app\core\middlewares\BaseMiddleware;
+use alfianchii\phpmvc\middlewares\BaseMiddleware;
 
 class Controller
 {
@@ -13,7 +13,7 @@ class Controller
 
     // This is not just an array, but it's an array of BaseMiddleware's class.
     /**
-     * @var \app\core\middlewares\BaseMiddleware[]
+     * @var \alfianchii\phpmvc\middlewares\BaseMiddleware[]
      */
     protected array $middlewares = [];
 

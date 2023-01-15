@@ -1,8 +1,8 @@
 <?php
 
-namespace app\core\db;
+namespace alfianchii\phpmvc\db;
 
-use app\core\{Application, Model};
+use alfianchii\phpmvc\{Application, Model};
 
 abstract class DbModel extends Model
 {
